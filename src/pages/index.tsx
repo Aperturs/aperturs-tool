@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { Navbar,BottomBar } from '@/containers'
+import { Navbar,BottomBar,SideBar } from '@/containers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,8 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className='relative h-[100vh]'>
-      <Navbar />
-      <BottomBar />
+        <SideBar />
+     
       </section>    
     </>
   )
