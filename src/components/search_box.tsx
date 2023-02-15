@@ -14,7 +14,7 @@ const SearchBox = () => {
         text-opacity-80 dark:text-white 
         dark:text-opacity-90 transition' 
         type='text' 
-        placeholder='Search' 
+        placeholder='Paste your Twitter/Linkedin Post URL here' 
         />
         
     </div>

@@ -1,9 +1,15 @@
 import SearchBox from "./search_box";
-import BackgroundType from "./bg_type";
-import BackgroundColor from "./background_color";
-import CardColor from "./card_color";
-import Responses from "./responses";
-import Size from "./size";
-import Download from "./download";
+import BackgroundType from "./SideBarIcons/bg_type";
+import BackgroundColor from "./SideBarIcons/background_color";
+import CardColor from "./SideBarIcons/card_color";
+import Responses from "./SideBarIcons/responses";
+import Size from "./SideBarIcons/size";
+import Download from "./SideBarIcons/download";
+import Profile from "./tweet/profile";
+import Content from "./tweet/content";
+import Time from "./tweet/time";
 
-export { SearchBox, BackgroundType, BackgroundColor, CardColor, Responses, Size, Download };
+export { SearchBox, BackgroundType, 
+    BackgroundColor, CardColor, Responses, 
+    Size, Download,Profile, Content
+    , Time };

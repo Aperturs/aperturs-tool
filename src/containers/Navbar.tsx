@@ -5,16 +5,10 @@ import { BsSunFill, BsMoonFill } from 'react-icons/bs'
 const Navbar = () => {
 
   return (
-    <div className='flex-grow flex justify-between p-12'>
-      <h1>
-        Aperturs
-      </h1>
+    <div className='relative flex-grow flex justify-end mr-10 py-2 z-10'>
       <SearchBox />
-
-      <label className="swap swap-rotate hover:bg-gray-700 w-12 hover:bg-opacity-40 rounded-full ">
-
+      <label className="swap swap-rotate hover:bg-gray-700 w-12 hover:bg-opacity-40 rounded-full mx-2">
         <input type="checkbox" />
-
         <BsSunFill className="swap-on fill-current w-6 h-6" />
         <BsMoonFill className="swap-off fill-current w-6 h-6 " />
       </label>
