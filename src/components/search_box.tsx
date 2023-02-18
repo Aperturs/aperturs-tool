@@ -1,7 +1,10 @@
 import React from 'react'
-import styles from './search.module.css'
+import { useState } from 'react'
 
 const SearchBox = () => {
+
+  const [search, setSearch] = useState('')
+
   return (
     <div className='max-w-lg flex-grow relative 
     rounded-xl transition-200 
@@ -15,6 +18,10 @@ const SearchBox = () => {
         dark:text-opacity-90 transition' 
         type='text' 
         placeholder='Paste your Twitter/Linkedin Post URL here' 
+        onChange={(e) => {
+        console.log(e.target.value)
+        setSearch(e.target.value)
+        }}
         />
         
     </div>

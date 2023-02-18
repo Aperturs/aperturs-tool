@@ -8,8 +8,7 @@ const Tweet = () => {
     h-full w-full 
     glass_morphic_card__dark
     shadow-xl
-    p-6
-    '>
+    p-6'>
       <Profile />  
       <Content /> 
       <div className='absolute bottom-4'> 

@@ -1,11 +1,18 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { Navbar,BottomBar,SideBar, Body } from '@/containers'
+import { Navbar,SideBar, Body } from '@/containers'
+
+
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+
   return (
+
     <>
       <Head>
         <title>Aperturs</title>
