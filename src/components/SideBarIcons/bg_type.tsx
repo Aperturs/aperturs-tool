@@ -1,24 +1,38 @@
 import React from 'react'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
-import { BiAperture } from 'react-icons/bi'
+import { useState } from 'react';
+
+function getTheme(isGlass: boolean): string {
+    if (isGlass) {
+        console.log('Glass')
+        return "Glass";
+    } else {
+        console.log('Plain')
+        return "Plain";
+    }
+}
 
 
 const BackgroundType = () => {
+
+    const [bgType, setBgType] = useState('')
+
     return (
-        <div className="dropdown dropdown-right dropdown-hover sidebar_icon">
-            <div tabIndex={0} className='flex flex-col items-center justify-center w-full h-full'>
-            <BiAperture className='text-3xl text-slate-500 ' />
-            <p className='icon_text '>
-                Fill
-            </p>
-        </div>
-            <div tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-20 items-center">
-                <div className='flex items-center justify-center  p-3 w-14 h-14 hover:border-2 hover:border-gray-600 rounded-lg'>
-                    <AiFillEye className='text-3xl text-slate-400' />
-                </div>
-                <div className='flex items-center justify-center  p-3 w-14 h-14  hover:border-2 hover:border-gray-600 rounded-lg'>
-                    <AiFillEyeInvisible className='text-3xl text-slate-400' />
-                </div>
+        <div className='sidebar_icon'>
+            <div className='flex flex-col items-center justify-center w-full h-full'>
+
+                <label className="swap   ">
+                    <input type="checkbox"
+                        onChange={(e) => {
+                            setBgType(getTheme(e.target.checked))
+                        }}
+                    />
+                    <AiFillEye className="swap-on fill-current w-6 h-6 text-slate-500" />
+                    <AiFillEyeInvisible className="swap-off fill-current w-6 h-6 text-slate-500" />
+                </label>
+                <p className='icon_text'>
+                    Fill
+                </p>
             </div>
         </div>
     )

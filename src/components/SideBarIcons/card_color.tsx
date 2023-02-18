@@ -3,16 +3,32 @@ import { useState } from 'react';
 import { BsSunFill, BsMoonFill } from 'react-icons/bs'
 
 
+
+function getTheme(isDarkMode: boolean): string {
+  if (isDarkMode) {
+    console.log('dark')
+    return "Dark";
+  } else {
+    console.log('light')
+    return "Light";
+  }
+}
+
+
 const CardColor = () => {
+  
+  const [cardColor, setCardColor] = useState('')
 
   return (
     <div className='sidebar_icon'>
       <div className='flex flex-col items-center justify-center w-full h-full'>
 
         <label className="swap swap-rotate  ">
-
-          <input type="checkbox" />
-
+          <input type="checkbox"
+          onChange={(e) => {
+            setCardColor(getTheme(e.target.checked))
+          }}
+          />
           <BsSunFill className="swap-on fill-current w-6 h-6 text-slate-500" />
           <BsMoonFill className="swap-off fill-current w-6 h-6 text-slate-500" />
         </label>
