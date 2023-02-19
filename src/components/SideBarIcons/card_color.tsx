@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react';
+import { useContext } from 'react';
+import { AppContext } from '@/pages';
 import { BsSunFill, BsMoonFill } from 'react-icons/bs'
 
 
@@ -17,8 +18,8 @@ function getTheme(isDarkMode: boolean): string {
 
 const CardColor = () => {
   
-  const [cardColor, setCardColor] = useState('')
-
+  const { setCardColor} = useContext(AppContext)
+  
   return (
     <div className='sidebar_icon'>
       <div className='flex flex-col items-center justify-center w-full h-full'>

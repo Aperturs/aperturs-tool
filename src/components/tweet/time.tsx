@@ -1,12 +1,14 @@
 import React from 'react'
+import { useContext } from 'react'
+import { AppContext } from '@/pages'
 
 const Time = () => {
+
+  const { cardColor } = useContext(AppContext)
   return (
-    <div className='text-gray-200 mx-2 '>
-      <p className='text-lg opacity-60'>
+      <p className={`${ cardColor === "Dark" ? ' text-gray-200 ' : 'text-gray-700 '} mx-2 text-lg opacity-60 `}>
         9:00 AM : 1 Jan 2021
       </p>
-    </div>
   )
 }
 

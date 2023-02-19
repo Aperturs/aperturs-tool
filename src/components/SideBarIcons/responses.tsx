@@ -1,9 +1,10 @@
 import {AiFillHeart,AiOutlineHeart} from 'react-icons/ai'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AppContext } from '@/pages';
 
 const Responses = () => {
 
-  const [response, setResponse] = useState(false)
+  const { setResponse } = useContext(AppContext)
   
   return (
     <div className='sidebar_icon flex-col'>
@@ -12,6 +13,7 @@ const Responses = () => {
     <input type="checkbox" 
     onChange={(e) => {
       setResponse(e.target.checked)
+      console.log(e.target.checked)
     }}
     />
     <AiFillHeart className="swap-on fill-current w-6 h-6 text-slate-500" />  

@@ -1,6 +1,8 @@
 import React from 'react'
 import {BsFileFontFill,BsFileFont} from 'react-icons/bs'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AppContext } from '@/pages';
+
 
 
 
@@ -17,7 +19,7 @@ function setFont(isFont: boolean): string {
 
 const Size = () => {
 
-  const [size, setSize] = useState('')
+  const {fontSize, setFontSize} = useContext(AppContext)
 
   return (
     <div className='sidebar_icon flex-col'>
@@ -26,7 +28,7 @@ const Size = () => {
     <input type="checkbox" 
     
     onChange={(e) => {
-      setSize(setFont(e.target.checked))
+      setFontSize(setFont(e.target.checked))
     }}
     />
     <BsFileFontFill className="swap-on fill-current w-6 h-6 text-slate-500" />  
