@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import {BsTwitter} from 'react-icons/bs'
+import { BsTwitter } from 'react-icons/bs'
 
 
 const Profile = () => {
+
+
     return (
         <div className='w-full flex justify-between'>
             <div className='flex justify-start'>
@@ -12,16 +14,16 @@ const Profile = () => {
                 src='/images/profile.webp'
                 alt='profile'
                 width={30}
-                height={30}
-            />
+                height={30} />
             <div className='flex flex-col'>
                 <p className='text-md mb-[-5px] text-white'>name</p>
                 <p className='text-xs  text-gray-200'>@username</p>
             </div>
             </div>
-            <BsTwitter className='text-blue-400 w-6 h-6'/>
+            <BsTwitter className=' w-6 h-6'/>
         </div>
     )
+
 }
 
 export default Profile

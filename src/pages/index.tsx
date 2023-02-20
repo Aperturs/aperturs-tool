@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import { Navbar,SideBar, Body } from '@/containers'
 import { createContext,useState } from 'react'
+import React, { useCallback, useRef } from 'react';
+import { toPng } from 'html-to-image';
 
 
 
@@ -17,6 +19,7 @@ export const AppContext = createContext({
   setFontSize: (fontSize: string) => {},
   cardColor: '',
   setCardColor: (cardColor: string) => {},
+  onButtonClick: () => {},
 
 })
 
@@ -24,12 +27,31 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-
   const [bgType, setBgType] = useState('')
   const [response, setResponse] = useState(false)
   const [bgColor, setBgColor] = useState('')
   const [fontSize, setFontSize] = useState('')
   const [cardColor, setCardColor] = useState('')
+  const ref = useRef<HTMLDivElement>(null)
+
+  const onButtonClick = useCallback(() => {
+    if (ref.current === null || ref.current.firstChild === null || !(ref.current.firstChild instanceof HTMLElement)) {
+      return;
+    }
+  
+    toPng(ref.current.firstChild, { cacheBust: true })
+      .then((dataUrl) => {
+        const link = document.createElement('a');
+        link.download = 'my-image-name.png';
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [ref]);
+  
+  
 
   return (
     <AppContext.Provider value={{
@@ -37,7 +59,8 @@ export default function Home() {
       response,setResponse,
       bgColor,setBgColor,
       fontSize,setFontSize,
-      cardColor,setCardColor
+      cardColor,setCardColor,
+      onButtonClick
     }}>
       <Head>
         <title>Aperturs</title>
@@ -49,8 +72,8 @@ export default function Home() {
         <Navbar />
         <SideBar />
         <div className='absolute min-h-screen min-w-full flex justify-center top-0
-         left-0 items-center '>  
-        <Body />
+         left-0 items-center '  ref={ref}>  
+        <Body/>
         </div>  
       </section>    
      </AppContext.Provider>     

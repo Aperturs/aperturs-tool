@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
-import { useState,useContext } from 'react';
+import { useContext } from 'react';
 import { AppContext } from '@/pages';
 
 function getTheme(isGlass: boolean): string {
