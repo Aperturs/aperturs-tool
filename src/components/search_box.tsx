@@ -1,8 +1,31 @@
+import { Tweet } from '@/containers';
 import React from 'react'
-import { useState } from 'react'
+import { useContext,useState } from 'react'
+import { AppContext } from '../pages/index'
+
+
+
+
+
+function LinktoId(link: string): string {
+  // Get the last segment of the URL, which contains the tweet ID
+  const segments = link.split('/');
+  const id = segments[segments.length - 1];
+
+  // Remove any query parameters or fragments from the ID
+  const match = id.match(/^[0-9]+/);
+  if (match) {
+    return match[0];
+  } else {
+    throw new Error('Invalid tweet URL');
+  }
+}
+
+
 
 const SearchBox = () => {
 
+  const { setTweetId } = useContext(AppContext)
   const [search, setSearch] = useState('')
 
   return (
@@ -21,6 +44,15 @@ const SearchBox = () => {
         onChange={(e) => {
         console.log(e.target.value)
         setSearch(e.target.value)
+        try {
+          const tweetId = LinktoId(e.target.value);
+          console.log(tweetId)
+          setTweetId(tweetId)
+          // Do something with the tweet ID
+        } catch (error) {
+          // Handle the error gracefully
+          console.log(error)
+        }
         }}
 
       />

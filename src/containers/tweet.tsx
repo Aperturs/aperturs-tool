@@ -1,5 +1,5 @@
 import React from 'react'
-import {Profile, Content ,Time} from '@/components'
+import {Profile, Content ,Time, Response} from '@/components'
 import { AppContext } from '@/pages'
 import { useContext } from 'react'
 
@@ -15,8 +15,9 @@ const Tweet = () => {
     p-6`}>
       <Profile />  
       <Content /> 
-      <div className='absolute bottom-4'> 
-      {response && <Time /> }
+      {response &&  <Response />}
+      <div className='absolute bottom-2'> 
+      <Time /> 
      </div> 
 
     </div>

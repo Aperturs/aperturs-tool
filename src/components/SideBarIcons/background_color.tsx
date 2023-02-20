@@ -46,9 +46,7 @@ return(
         ${bgColor === color ? 'border-2  border-blue-800' : ''}`}
         onClick={() => {   
             setBgColor(color)
-        }}
-
-        >
+        }}>
         </div>
 );
    

@@ -4,13 +4,12 @@ import { AppContext } from '@/pages'
 
 const Content = () => {
 
-  const { fontSize } = useContext(AppContext)
+  const { fontSize,tweet } = useContext(AppContext)
 
   return (
     <div className='text-white opacity-80 mt-2'>
         <p className={`${fontSize} mx-2  mb-6`}>
-            Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Quisquam, quod.
+          {tweet?.text}
         </p>
     </div>
   )

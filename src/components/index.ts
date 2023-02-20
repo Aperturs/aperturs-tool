@@ -8,8 +8,9 @@ import Download from "./SideBarIcons/download";
 import Profile from "./tweet/profile";
 import Content from "./tweet/content";
 import Time from "./tweet/time";
+import Response from "./tweet/responses";
 
 export { SearchBox, BackgroundType, 
     BackgroundColor, CardColor, Responses, 
     Size, Download,Profile, Content
-    , Time };
+    , Time, Response };

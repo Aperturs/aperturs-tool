@@ -1,11 +1,22 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { Navbar,SideBar, Body } from '@/containers'
-import { createContext,useState } from 'react'
+import { Navbar,SideBar, Body, Tweet } from '@/containers'
+import { createContext,useState,useEffect } from 'react'
 import React, { useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
 
+interface TweetData {
+  text: string;
+  created_at: string;
+  user: {
+    name: string;
+    profile_image_url_https: string;
+    screen_name: string;
+  };
+  favorite_count: number;
+  retweet_count: number;    
 
+}
 
 
 export const AppContext = createContext({
@@ -20,6 +31,9 @@ export const AppContext = createContext({
   cardColor: '',
   setCardColor: (cardColor: string) => {},
   onButtonClick: () => {},
+  tweetId: '',
+  setTweetId: (tweetId: string) => {},
+  tweet: null as TweetData | null,
 
 })
 
@@ -32,6 +46,23 @@ export default function Home() {
   const [bgColor, setBgColor] = useState('')
   const [fontSize, setFontSize] = useState('')
   const [cardColor, setCardColor] = useState('')
+  const [tweet, setTweet] = useState<TweetData | null>(null);
+  const [tweetId, setTweetId] = useState('');
+
+  useEffect(() => {
+    const fetchTweet = async () => {
+      if (!tweetId) return; // Skip fetching if tweetId is empty
+      const res = await fetch(`/api/tweet?id=${tweetId}`);
+      if (res.ok) {
+        const data = await res.json();
+        setTweet(data);
+        console.log(data)
+      }
+    };
+  
+    fetchTweet();
+  }, [tweetId]);
+
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -43,7 +74,7 @@ export default function Home() {
     toPng(ref.current.firstChild, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement('a');
-        link.download = 'my-image-name.png';
+        link.download = `${tweet?.user}'s-tweet.png`;
         link.href = dataUrl;
         link.click();
       })
@@ -56,12 +87,16 @@ export default function Home() {
 
   return (
     <AppContext.Provider value={{
+      
       bgType,setBgType,
       response,setResponse,
       bgColor,setBgColor,
       fontSize,setFontSize,
       cardColor,setCardColor,
+      tweetId,setTweetId,
+      tweet,
       onButtonClick
+
     }}>
       <Head>
         <title>Aperturs</title>
