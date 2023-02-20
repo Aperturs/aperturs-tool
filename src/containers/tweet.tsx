@@ -16,11 +16,8 @@ const Tweet = () => {
       <Profile />  
       <Content /> 
       <div className='absolute bottom-4'> 
-  
-      {response &&
-       <Time /> 
-      }
-             </div> 
+      {response && <Time /> }
+     </div> 
 
     </div>
   )

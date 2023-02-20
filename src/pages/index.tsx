@@ -10,9 +10,7 @@ export const AppContext = createContext({
   bgType: '',
   setBgType: (bgType: string) => {},
   response: false,
-  setResponse: (response: boolean) => {
-    console.log(response)
-  },
+  setResponse: (response: boolean) => {},
   bgColor: '',
   setBgColor: (bgColor: string) => {},
   fontSize: '',

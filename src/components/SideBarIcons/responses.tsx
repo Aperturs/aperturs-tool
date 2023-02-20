@@ -4,7 +4,7 @@ import { AppContext } from '@/pages';
 
 const Responses = () => {
 
-  const { setResponse } = useContext(AppContext)
+  const { setResponse,  } = useContext(AppContext)
   
   return (
     <div className='sidebar_icon flex-col'>
