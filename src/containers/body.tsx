@@ -1,11 +1,16 @@
 import React from 'react'
 import Tweet from './tweet'
+import { AppContext } from '@/pages'
+import { useContext } from 'react'
 
 const Body = () => {
+
+  const {bgColor} = useContext(AppContext)
+
   return (
-    <div className=' relative
+    <div className={` relative
     rounded-2xl p-12
-    bg-gradient-to-r from-blue-200 to-blue-900 items-center shadow-2xl'
+    ${bgColor} items-center shadow-2xl`}
     >
       <Tweet/>
     </div>

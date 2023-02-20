@@ -20,7 +20,7 @@ const Profile = () => {
                 <p className='text-xs  text-gray-200'>@username</p>
             </div>
             </div>
-            <BsTwitter className=' w-6 h-6'/>
+            <BsTwitter className='text-[#1BA0F0] w-6 h-6'/>
         </div>
     )
 

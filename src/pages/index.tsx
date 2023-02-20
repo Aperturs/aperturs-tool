@@ -32,6 +32,7 @@ export default function Home() {
   const [bgColor, setBgColor] = useState('')
   const [fontSize, setFontSize] = useState('')
   const [cardColor, setCardColor] = useState('')
+
   const ref = useRef<HTMLDivElement>(null)
 
   const onButtonClick = useCallback(() => {
