@@ -6,6 +6,7 @@ import React, { useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
 
 interface TweetData {
+  
   text: string;
   created_at: string;
   user: {
@@ -41,11 +42,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [bgType, setBgType] = useState('')
+  const [bgType, setBgType] = useState('Glass')
   const [response, setResponse] = useState(false)
-  const [bgColor, setBgColor] = useState('')
-  const [fontSize, setFontSize] = useState('')
-  const [cardColor, setCardColor] = useState('')
+  const [bgColor, setBgColor] = useState('bg-gradient-to-r from-cyan-100 to-blue-500')
+  const [fontSize, setFontSize] = useState('text-xl')
+  const [cardColor, setCardColor] = useState('Dark')
   const [tweet, setTweet] = useState<TweetData | null>(null);
   const [tweetId, setTweetId] = useState('');
 
@@ -114,6 +115,7 @@ export default function Home() {
       </section>    
      </AppContext.Provider>     
     )
+    
 }
 
 

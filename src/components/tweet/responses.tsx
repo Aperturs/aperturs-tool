@@ -1,8 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { AppContext } from '@/pages'
-import {AiFillHeart} from 'react-icons/ai'
-import {RiRepeatLine} from 'react-icons/ri'
+
 
 const Response = () => {
     const { cardColor,tweet } = useContext(AppContext)
@@ -11,9 +10,11 @@ const Response = () => {
       {
       tweet?.favorite_count
       }
-      <AiFillHeart className='text-gray-600 opacity-80 w-6 h-6'/>
+      <p className='opacity-70'>likes </p>
       {tweet?.retweet_count}
-      <RiRepeatLine className='text-gray-600 opacity-80 w-6 h-6'/>
+      <p className='opacity-70'>
+      retweets
+      </p>
       </div>        
   )
 }
