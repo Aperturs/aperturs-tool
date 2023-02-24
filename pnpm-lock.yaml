@@ -23,6 +23,7 @@ specifiers:
   react-icons: ^4.7.1
   tailwindcss: ^3.2.4
   tailwindcss-filters: ^2.0.0
+  twitter-api-v2: ^1.14.1
   twitter-lite: ^1.1.0
   typescript: 4.9.5
 
@@ -45,6 +46,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
   tailwindcss-filters: 2.0.0
+  twitter-api-v2: 1.14.1
   twitter-lite: 1.1.0
   typescript: 4.9.5
 
@@ -2521,6 +2523,10 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 4.9.5
+    dev: false
+
+  /twitter-api-v2/1.14.1:
+    resolution: {integrity: sha512-RTegtBS6FIjUW87gOgTAQG9zF9OvzY8ObkyUgW99tA45Scwro3ToJrdNd1Itn1SW4KIds5N5LQuy2JbUZdNbkA==}
     dev: false
 
   /twitter-lite/1.1.0:

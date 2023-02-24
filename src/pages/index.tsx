@@ -7,7 +7,7 @@ import { toPng } from 'html-to-image';
 
 interface TweetData {
   
-  text: string;
+  full_text: string;
   created_at: string;
   user: {
     name: string;
@@ -16,6 +16,12 @@ interface TweetData {
   };
   favorite_count: number;
   retweet_count: number;    
+  replies_count: number;
+  entities: {
+    media: {
+      media_url_https: string;
+    }[];
+  };
 
 }
 
