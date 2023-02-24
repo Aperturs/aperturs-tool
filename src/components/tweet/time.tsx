@@ -15,7 +15,7 @@ function convertDate(dateStr: string): string {
   const timeString = `${hour12}:${minutes.toString().padStart(2, '0')} ${amPm}`;
   const dateString = `${day} ${month} ${year}`;
 
-  return `${timeString} : ${dateString}`;
+  return `${timeString} · ${dateString}`;
 }
 
 
@@ -24,7 +24,7 @@ const Time = () => {
   const { cardColor,tweet } = useContext(AppContext)
 
 
-  const createdTime = convertDate(tweet?.created_at || '')
+  const createdTime = convertDate(tweet?.created_at || "Fri Feb 17 16:38:18 +0000 2023")
 
   return (
       <p className={`${ cardColor === "Dark" ? ' text-gray-200 ' : 'text-gray-700 '} mx-2 mt-2 text-lg opacity-60 `}>

@@ -22,7 +22,10 @@ const Content = () => {
         opacity-80
         ${cardColor == "Dark"? 'text-gray-100':'text-gray-800'  }
         `}>
-          {extractTweetText(tweet?.full_text || '')}
+          {extractTweetText(tweet?.full_text || 
+            `Start creating beautiful images of your 
+            posts by entering your input link above and sharing it with others.`
+            )}
         </p>
 
         {

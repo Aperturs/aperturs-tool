@@ -26,10 +26,10 @@ const Profile = () => {
                 height={30} />
             <div className='flex flex-col'>
                 <p className={`text-md mb-[-3px] ${textColor1}`}>
-                    {tweet?.user.name}
+                    {tweet?.user.name || 'Swaraj Bachu'}
                 </p>
                 <p className={`text-xs ${textColor2}`}>
-                    @{tweet?.user.screen_name}
+                    @{tweet?.user.screen_name || 'swarajbachu'}
                 </p>
             </div>
             </div>
