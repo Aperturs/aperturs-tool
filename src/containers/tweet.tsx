@@ -9,7 +9,7 @@ const Tweet = () => {
   const { response,cardColor  } = useContext(AppContext)
 
   return (
-    <div className={`h-full w-full 
+    <div className={`
     ${cardColor === 'Dark' ?  'glass_morphic_card__dark' : 'glass_morphic_card__light'}
     shadow-xl
     p-6`}>

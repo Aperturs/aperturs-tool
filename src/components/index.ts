@@ -9,8 +9,9 @@ import Profile from "./tweet/profile";
 import Content from "./tweet/content";
 import Time from "./tweet/time";
 import Response from "./tweet/responses";
+import PostSize from "./SideBarIcons/post_size";
 
 export { SearchBox, BackgroundType, 
     BackgroundColor, CardColor, Responses, 
     Size, Download,Profile, Content
-    , Time, Response };
+    , Time, Response, PostSize };

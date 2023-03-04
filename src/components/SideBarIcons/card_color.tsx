@@ -24,7 +24,7 @@ const CardColor = () => {
     <div className='sidebar_icon'>
       <div className='flex flex-col items-center justify-center w-full h-full'>
 
-        <label className="swap swap-rotate  ">
+        <label className="swap swap-rotate ">
           <input type="checkbox"
           onChange={(e) => {
             setCardColor(getTheme(e.target.checked))

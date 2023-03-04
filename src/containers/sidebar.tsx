@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { AppContext } from '@/pages'
-import { BackgroundColor, BackgroundType, CardColor, Responses, Size,Download } from '@/components'
+import { BackgroundColor, BackgroundType, CardColor, Responses, Size,Download,PostSize } from '@/components'
 
 const SideBar = () => {
 
@@ -14,6 +14,7 @@ const SideBar = () => {
       <CardColor />
       <Responses />
       <Size />
+      <PostSize />
       <Download />
     </div>
   )
