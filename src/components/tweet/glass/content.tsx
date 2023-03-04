@@ -15,18 +15,21 @@ const Content = () => {
   const { fontSize,tweet,cardColor } = useContext(AppContext)
 
   const mediaUrl = tweet?.entities?.media?.[0]?.media_url_https ?? '';
+  const tweetText = extractTweetText(tweet?.full_text || 
+    `Start creating beautiful images of your 
+    posts by entering your input link above and sharing it with others.`
+    )
+    const tweetWithLineBreaks = tweetText.replace(/\n/g, '<br>');
+
 
   return (
     <div className='mt-2'>
-        <p className={`${fontSize} mx-2  mb-6 
+        <p className={`${fontSize} mx-2  mb-2 
         opacity-80
         ${cardColor == "Dark"? 'text-gray-100':'text-gray-800'  }
-        `}>
-          {extractTweetText(tweet?.full_text || 
-            `Start creating beautiful images of your 
-            posts by entering your input link above and sharing it with others.`
-            )}
-        </p>
+        `}
+        dangerouslySetInnerHTML={{__html: tweetWithLineBreaks}}
+      />
 
         {
           mediaUrl && (

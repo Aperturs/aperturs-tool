@@ -15,6 +15,8 @@ interface SizeProps {
 }
 
 
+
+
 const PostSize = () => {
 
     return (
@@ -54,6 +56,8 @@ const Values = () => {
                         icon = {size.icon}
                         />
                     ))}
+
+
                 </div>
             </CSSTransition>
             <CSSTransition
@@ -88,6 +92,8 @@ const Values = () => {
 const SingleSize = ({ size, width, height,icon:Icon }: SizeProps) => {
 
     const [hover,setHover] = useState(false)
+    const { setWidth, setHeight } = useContext(AppContext);
+
     return (
       <div className="relative flex flex-row 
       w-[11rem]
@@ -97,6 +103,11 @@ const SingleSize = ({ size, width, height,icon:Icon }: SizeProps) => {
        hover:bg-gray-100 my-1"
        onMouseEnter={() => setHover(true)}
        onMouseLeave={() => setHover(false)}
+       onClick={() => {
+           setWidth(width);
+           setHeight(height);
+       }
+    }
        >
         <div className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
           <Icon  className="w-4 h-4 text-gray-600"/>
@@ -105,9 +116,7 @@ const SingleSize = ({ size, width, height,icon:Icon }: SizeProps) => {
           <div className="truncate">
             <span className="text-gray-600">{size}</span>
           </div>
-          <div className= {`${
-            hover ? 'block' : 'hidden'
-          }`} >
+          <div className= {`${hover ? 'block' : 'hidden' }`} >
             <span className="text-gray-600 text-xs">{width} x {height}</span>
           </div>
         </div>

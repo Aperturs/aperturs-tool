@@ -1,5 +1,5 @@
 import React from 'react'
-import {Profile, Content ,Time, Response} from '@/components'
+import {Profile, PlainContent ,PlainTime, Response} from '@/components'
 import { AppContext } from '@/pages'
 import { useContext } from 'react'
 
@@ -9,12 +9,12 @@ const PlainTweet = () => {
   const { response,cardColor  } = useContext(AppContext)
 
   return (
-    <div className={`h-full w-full p-2`}>
+    <div className={` h-full w-full p-2`}>
       <Profile />  
-      <Content /> 
+      <PlainContent /> 
+      <div className='absolute bottom-8'> 
       {response &&  <Response />}
-      <div className='absolute bottom-2'> 
-      <Time /> 
+      <PlainTime /> 
      </div> 
 
     </div>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { Navbar,SideBar, Body, Tweet } from '@/containers'
+import { Navbar,SideBar, Body,PlainBody } from '@/containers'
 import { createContext,useState,useEffect } from 'react'
 import React, { useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
@@ -51,6 +51,8 @@ export const AppContext = createContext({
   setHeight: (height: number) => {},
   width: 0,
   setWidth: (width: number) => {},
+  textColor: '',
+  setTextColor: (textColor: string) => {}
 
 })
 
@@ -61,12 +63,13 @@ export default function Home() {
   const [bgType, setBgType] = useState('Glass')
   const [response, setResponse] = useState(false)
   const [bgColor, setBgColor] = useState('bg-gradient-to-r from-cyan-100 to-blue-500')
-  const [fontSize, setFontSize] = useState('text-xl')
+  const [fontSize, setFontSize] = useState('text-lg')
   const [cardColor, setCardColor] = useState('Dark')
   const [tweet, setTweet] = useState<TweetData | null>(null);
   const [tweetId, setTweetId] = useState('');
   const [height, setHeight] = useState(1080);
   const [width, setWidth] = useState(1080);
+  const [textColor, setTextColor] = useState('text-black')
 
   useEffect(() => {
     const fetchTweet = async () => {
@@ -117,6 +120,7 @@ export default function Home() {
       onButtonClick,
       height,setHeight,
       width,setWidth,
+      textColor,setTextColor
 
     }}>
       <Head>
@@ -130,7 +134,7 @@ export default function Home() {
         <SideBar />
         <div className='absolute min-h-screen min-w-full flex justify-center top-0
          left-0 items-center '  ref={ref}>  
-        <Body/>
+          {bgType === 'Glass' ? <Body/> : <PlainBody/>}
         </div>  
       </section>    
      </AppContext.Provider> 
