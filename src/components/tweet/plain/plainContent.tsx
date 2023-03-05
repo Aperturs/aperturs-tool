@@ -23,7 +23,7 @@ const PlainContent = () => {
 
 
   return (
-    <div className='mt-2 h-full'>
+    <div className='mt-2'>
           {tweetLines.map((line, index) => (
         <p
           key={index}
@@ -32,8 +32,6 @@ const PlainContent = () => {
           {line}
         </p>
       ))}
-      
-
         {
           mediaUrl && (
             <div className='flex justify-center'>

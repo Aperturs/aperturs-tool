@@ -9,7 +9,7 @@ const PlainTweet = () => {
   const { response,cardColor  } = useContext(AppContext)
 
   return (
-    <div className={` h-full w-full p-2`}>
+    <div className={` w-full p-2`}>
       <Profile />  
       <PlainContent /> 
       <div className='absolute bottom-8'> 

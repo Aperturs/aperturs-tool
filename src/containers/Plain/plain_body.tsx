@@ -4,7 +4,7 @@ import { PlainTweet } from '..'
 
 const PlainBody = () => {
     const {bgColor, bgType, width, height} = useContext(AppContext)
-    const maxWidth = 600 // adjust this value as necessary
+    const maxWidth = 500 // adjust this value as necessary
     const scaleFactor = Math.min(1, maxWidth / width)
     const scaledWidth = Math.round(width * scaleFactor)
     const scaledHeight = Math.round(height * scaleFactor)
@@ -16,9 +16,8 @@ const PlainBody = () => {
     style={{
         width: `${scaledWidth}px`,
         height: `${scaledHeight}px`,
-      }}>
-        <PlainTweet />
-      
+    }}>
+      <PlainTweet />
     </div>
   )
 }
