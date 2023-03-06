@@ -40,7 +40,7 @@ const SearchBox = () => {
         text-opacity-80 dark:text-white 
         dark:text-opacity-90 transition' 
         type='text' 
-        placeholder='Paste your Twitter/Linkedin Post URL here' 
+        placeholder='Paste your Twitter Post URL here' 
         onChange={(e) => {
         console.log(e.target.value)
         setSearch(e.target.value)
