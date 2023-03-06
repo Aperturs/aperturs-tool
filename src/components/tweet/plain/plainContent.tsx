@@ -32,13 +32,13 @@ const PlainContent = () => {
           {line}
         </p>
       ))}
-        {
+        {/* {
           mediaUrl && (
-            <div className='flex justify-center'>
+            <div className='flex justify-center overflow-hidden'>
               <img src={mediaUrl} className='rounded-lg mb-4' />
-                </div>
+            </div>
           ) 
-        }
+        } */}
 
     </div>
   )

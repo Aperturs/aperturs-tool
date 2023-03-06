@@ -96,7 +96,7 @@ export default function Home() {
     toPng(ref.current.firstChild, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement('a');
-        link.download = `${tweet?.user?.name}'s-tweet.png`;
+        link.download = `tweet.png`;
         link.href = dataUrl;
         link.click();
       })
