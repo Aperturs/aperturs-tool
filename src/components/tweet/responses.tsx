@@ -10,7 +10,7 @@ const Response = () => {
     const retweetCount = tweet?.retweet_count ?? 0
 
   return (
-    <div className={`w-full flex justify-start mt-2 gap-2 ml-2 mb-4 
+    <div className={`w-full flex justify-start mt-2 gap-2 ml-2 mb-2
     ${cardColor == "Dark"? 'text-gray-100':'text-gray-700'  }`}>
       {
       favCount > 0 ? favCount : ''
