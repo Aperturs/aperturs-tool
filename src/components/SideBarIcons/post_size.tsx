@@ -112,7 +112,7 @@ const SingleSize = ({ size, width, height,icon:Icon }: SizeProps) => {
         <div className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
           <Icon  className="w-4 h-4 text-gray-600"/>
         </div>
-        <div className="flex flex-row items-center justify-between w-full">
+        <div className="flex flex-col items-start justify-between w-full">
           <div className="truncate">
             <span className="text-gray-600">{size}</span>
           </div>
