@@ -60,9 +60,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [bgType, setBgType] = useState('Glass')
+  const [bgType, setBgType] = useState('Plain')
   const [response, setResponse] = useState(false)
-  const [bgColor, setBgColor] = useState('bg-gradient-to-r from-cyan-100 to-blue-500')
+  const [bgColor, setBgColor] = useState('white')
   const [fontSize, setFontSize] = useState('text-lg')
   const [cardColor, setCardColor] = useState('Dark')
   const [tweet, setTweet] = useState<TweetData | null>(null);
@@ -96,7 +96,7 @@ export default function Home() {
     toPng(ref.current.firstChild, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement('a');
-        link.download = `${tweet?.user}'s-tweet.png`;
+        link.download = `${tweet?.user?.name}'s-tweet.png`;
         link.href = dataUrl;
         link.click();
       })

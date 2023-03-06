@@ -15,7 +15,7 @@ const SideBar = () => {
       {
         bgType === 'Plain' ? <PlainColors /> : <BackgroundColor/>
       }
-      <BackgroundType />
+      {/* <BackgroundType /> */}
       {
         bgType === 'Glass' ? <CardColor /> : <TextColor />
       }

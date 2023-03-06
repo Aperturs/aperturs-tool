@@ -23,7 +23,7 @@ const PlainContent = () => {
 
 
   return (
-    <div className='mt-2'>
+    <div className='mt-4'>
           {tweetLines.map((line, index) => (
         <p
           key={index}

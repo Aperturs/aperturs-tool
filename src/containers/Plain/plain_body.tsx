@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { PlainTweet } from '..'
 
 const PlainBody = () => {
+  
     const {bgColor, bgType, width, height} = useContext(AppContext)
     const maxWidth = 500 // adjust this value as necessary
     const scaleFactor = Math.min(1, maxWidth / width)
