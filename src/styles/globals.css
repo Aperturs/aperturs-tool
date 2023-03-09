@@ -145,7 +145,7 @@ a {
 
   .sidebar_icon{
     @apply relative flex items-center justify-center 
-    w-20 h-20 my-2 mx-auto text-white bg-slate-100 rounded-3xl hover:rounded-xl
+    w-16 sm:w-20 h-20 my-2 mx-auto text-white bg-slate-100 rounded-3xl hover:rounded-xl
     hover:bg-white hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out;
   }
   .icon_text{

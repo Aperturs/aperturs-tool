@@ -130,10 +130,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className= 'relative sm:h-screen'>
+      <section className= 'relative h-screen overflow-x-scroll'>
         <Navbar />
         <SideBar />
-        <div className='absolute min-h-screen min-w-full flex justify-center top-0
+        <div className='absolute min-h-screen min-w-full flex justify-center top-0  overflow-x-scroll
          left-0 items-center '  ref={ref}>  
           {bgType === 'Glass' ? <Body/> : <PlainBody/>}
         </div>  

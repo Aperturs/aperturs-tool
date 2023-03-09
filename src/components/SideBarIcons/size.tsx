@@ -9,10 +9,10 @@ import { AppContext } from '@/pages';
 function setFont(isFont: boolean): string {
   if (isFont) {
     console.log('large')
-    return "text-xl";
+    return "sm:text-xl text-md";
   } else {
     console.log('small')
-    return "text-lg";
+    return "sm:text-lg text-sm";
   }
 }
 
