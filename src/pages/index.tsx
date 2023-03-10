@@ -53,7 +53,9 @@ export const AppContext = createContext({
   width: 0,
   setWidth: (width: number) => {},
   textColor: '',
-  setTextColor: (textColor: string) => {}
+  setTextColor: (textColor: string) => {},
+  favicon: '',
+  setFavicon: (favicon: string) => {}
 
 })
 
@@ -70,7 +72,8 @@ export default function Home() {
   const [tweetId, setTweetId] = useState('');
   const [height, setHeight] = useState(1080);
   const [width, setWidth] = useState(1080);
-  const [textColor, setTextColor] = useState('text-black')
+  const [textColor, setTextColor] = useState('text-black');
+  const [favicon, setFavicon] = useState('/favicon_light.ico');
 
   useEffect(() => {
     const fetchTweet = async () => {
@@ -85,6 +88,13 @@ export default function Home() {
   
     fetchTweet();
   }, [tweetId]);
+
+  useEffect(() => {
+
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setFavicon(prefersDark ? '/favicon_dark.ico' : '/favicon_light.ico');
+
+  }, []);
 
 
   const ref = useRef<HTMLDivElement>(null)
@@ -121,14 +131,19 @@ export default function Home() {
       onButtonClick,
       height,setHeight,
       width,setWidth,
-      textColor,setTextColor
+      textColor,setTextColor,
+      favicon,setFavicon
+
 
     }}>
+
       <Head>
         <title>Aperturs</title>
         <meta name="description" content="Convert Your tweets into beautiful images" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon"
+        sizes='3000x3000'
+        href={favicon} />
       </Head>
       <section className= 'relative h-screen overflow-x-scroll'>
         <Navbar />

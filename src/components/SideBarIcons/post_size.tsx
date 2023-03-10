@@ -47,7 +47,6 @@ const Values = () => {
                 <div className="menu text-black">
 
                     {SizeList.map((size: SizeProps,tabIndex:number) => (
-                        console.log(size),
                         <SingleSize 
                         key={tabIndex}
                         size={size.size}
