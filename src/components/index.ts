@@ -17,10 +17,11 @@ import PlainContent from "./tweet/plain/plainContent";
 import PlainProfile from "./tweet/plain/plain_profile";
 import PlainResponse from "./tweet/plain/plain_responses";
 import TwitterLink from "./twitterlink";
+import SiteLogo from "./SiteLogo";
 
 export { SearchBox, BackgroundType, 
     BackgroundColor, CardColor, Responses, 
     Size, Download,Profile, Content
     , Time, Response, PostSize, PlainColors,PlainTime,TextColor,PlainContent,PlainProfile,PlainResponse,
-    TwitterLink
+    TwitterLink,SiteLogo
 };

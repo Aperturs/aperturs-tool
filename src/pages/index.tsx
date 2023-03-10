@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import { Navbar,SideBar, Body,PlainBody } from '@/containers'
-import { TwitterLink } from '@/components'
+import { TwitterLink,SiteLogo } from '@/components'
 import { createContext,useState,useEffect } from 'react'
 import React, { useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
@@ -153,6 +153,7 @@ export default function Home() {
           {bgType === 'Glass' ? <Body/> : <PlainBody/>}
         </div>  
         <TwitterLink />
+        <SiteLogo />
       </section>    
      </AppContext.Provider> 
        

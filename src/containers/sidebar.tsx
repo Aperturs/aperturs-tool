@@ -7,7 +7,7 @@ import { BackgroundColor, BackgroundType,
 
 const SideBar = () => {
 
-  const { bgType } = useContext(AppContext)
+  const { bgType,favicon } = useContext(AppContext)
 
   return (
     <div className='absolute top-0 left-0 h-screen w-24 m-0 
