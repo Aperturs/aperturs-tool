@@ -9,7 +9,7 @@ const Download = () => {
   const {onButtonClick} = useContext(AppContext)
   
   return (
-    <div className='sidebar_icon flex-col bg-accent hover:bg-accent absolute bottom-4 left-2 cursor-pointer'
+    <div className='sidebar_icon flex-col bg-accent hover:bg-accent absolute bottom-0 left-2 cursor-pointer'
     onClick={() => {
       onButtonClick()
     }}

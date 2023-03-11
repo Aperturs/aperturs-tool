@@ -48,6 +48,7 @@ const Menu = () => {
             <Color color ="bg-[#F77171]" />
             <Color color ="bg-[#c4b5fd]" />
             <Color color ="bg-[#f0abfc]" />
+            
             <input type="text" placeholder="#c4b5fd" className="input w-40 h-10 border-2 border-gray-500 text-gray-400" 
             onChange={
                 (e) => {

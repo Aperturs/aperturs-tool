@@ -145,7 +145,7 @@ export default function Home() {
         sizes='3000x3000'
         href={favicon} />
       </Head>
-      <section className= 'relative h-screen overflow-x-scroll'>
+      <section className= 'relative h-screen overflow-x-scroll max-sm:hidden'>
         <Navbar />
         <SideBar />
         <div className='absolute min-h-screen min-w-full flex justify-center top-0  overflow-x-scroll
@@ -154,7 +154,17 @@ export default function Home() {
         </div>  
         <TwitterLink />
         <SiteLogo />
-      </section>    
+      </section>   
+      <section className='sm:hidden'>
+        <div className='text-center h-[100vh] items-center align-middle'>
+          <h1>
+            Made with ❤️ by <a href='https://twitter.com/swarajbachu'>Swaraj Bachu </a>
+          </h1>
+          <h1 className='absolute top-1/2 text-4xl align-middle'>
+            The Site Only Works on Bigger Screens
+          </h1>
+          </div>
+      </section> 
      </AppContext.Provider> 
        
 )}
