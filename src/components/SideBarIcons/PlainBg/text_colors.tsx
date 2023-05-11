@@ -18,10 +18,8 @@ const TextColor = () => {
 
 const Menu = () => {
   return (
-    <div
-      tabIndex={0}
-      className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44 items-center grid grid-cols-4 gap-1"
-    >
+    <div tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44 items-center grid grid-cols-4 gap-1">
+        
       <Color color="text-[#ffffff]" />
       <Color color="text-[#000000]" />
       <Color color="text-[#7CD3FC]" />
@@ -30,6 +28,7 @@ const Menu = () => {
       <Color color="text-[#F77171]" />
       <Color color="text-[#c4b5fd]" />
       <Color color="text-[#f0abfc]" />
+
     </div>
   );
 };

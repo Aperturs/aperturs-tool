@@ -4,10 +4,10 @@ import Twitter from 'twitter-lite';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   
   const client = new Twitter({
-    consumer_key: 'CkpjvoELIUbuvjlLRPu9ZYWYf',
-    consumer_secret: 'TyFZvw40nVYlVsCkILrf139OBpb6zlGFL0IYDN5ww8vrl4yaZk',
-    access_token_key: '3304494590-AhE0e9FjEDV5wCDoeIGWDFsmdwHZ34rb9OUIQLc',
-    access_token_secret: 'b9xTegBk3aJdBeApSzKbrxBA7tvu75yZmM30zAER2sErc',
+    consumer_key: '8VXKb4OrknerM2xE6E3RGn6Oy',
+    consumer_secret: '1cjA0G1H23YfeERyYE5xZd2qgCoUTJW974RMLDNbemZoqbrbMA',
+    access_token_key: '3304494590-X9az48T8BoVhJ6OtJlLM0HRd6eW67LN10HSqPhE',
+    access_token_secret: 'nuzYTKTPXVF6L61uQo3MYCqgWhGtKa2zfjRWgNU5Yh7wg',
   });
 
   const { id } = req.query;
@@ -19,6 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(500).json({ error: 'Failed to fetch tweet' });
   }    
 }
+
 
 // import { NextApiRequest, NextApiResponse } from 'next';
 // import { TwitterApi } from 'twitter-api-v2';
@@ -67,3 +68,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 //     res.status(500).json({ error: 'Failed to fetch tweet metrics' });
 //   }
 // }
+
+
