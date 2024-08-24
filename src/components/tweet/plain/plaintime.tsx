@@ -27,7 +27,7 @@ const PlainTime = () => {
   const createdTime = convertDate(tweet?.created_at || "Fri Feb 17 16:38:18 +0000 2023")
 
   return (
-      <p className={`${textColor} mx-2 mt-2 text-lg opacity-60 `}>
+      <p className={`${textColor} w-full flex items-center  text-lg opacity-60 `}>
         {createdTime}
       </p>
   )

@@ -1,25 +1,23 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import Twitter from 'twitter-lite';
+import { NextApiRequest, NextApiResponse } from "next";
+import { getTweet, type Tweet } from "react-tweet/api";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  
-  const client = new Twitter({
-    consumer_key: '8VXKb4OrknerM2xE6E3RGn6Oy',
-    consumer_secret: '1cjA0G1H23YfeERyYE5xZd2qgCoUTJW974RMLDNbemZoqbrbMA',
-    access_token_key: '3304494590-X9az48T8BoVhJ6OtJlLM0HRd6eW67LN10HSqPhE',
-    access_token_secret: 'nuzYTKTPXVF6L61uQo3MYCqgWhGtKa2zfjRWgNU5Yh7wg',
-  });
-
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { id } = req.query;
 
+  const tweetId = id as string;
+
   try {
-    const tweet = await client.get('statuses/show', { id, tweet_mode: 'extended', in_reply_to_tweet_id: true });
+    const tweet = id ? await getTweet(tweetId) : null;
+
+    console.log(tweet);
     res.status(200).json(tweet);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch tweet' });
-  }    
+    res.status(500).json({ error: "Failed to fetch tweet" });
+  }
 }
-
 
 // import { NextApiRequest, NextApiResponse } from 'next';
 // import { TwitterApi } from 'twitter-api-v2';
@@ -68,5 +66,3 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 //     res.status(500).json({ error: 'Failed to fetch tweet metrics' });
 //   }
 // }
-
-

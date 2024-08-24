@@ -16,7 +16,7 @@ const Body = () => {
 
   return (
 
-    <div className={`relative rounded-2xl p-12 ${bgColor} items-center align-middle shadow-2xl`}
+    <div className={`relative  rounded-2xl p-12 ${bgColor} items-center align-middle shadow-2xl`}
          style={{
            width: `${scaledWidth}px`,
            height: `${scaledHeight}px`,

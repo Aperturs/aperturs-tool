@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-transition-group": "^4.4.5",
+    "react-tweet": "^3.2.1",
     "tailwindcss-filters": "^2.0.0",
     "twitter-api-v2": "^1.14.1",
     "twitter-lite": "^1.1.0",
