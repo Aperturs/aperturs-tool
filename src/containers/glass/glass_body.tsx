@@ -8,7 +8,7 @@ const Body = () => {
 
   const {bgColor, bgType, width, height} = useContext(AppContext)
   const scaleBy = width > height ? height : width;
-  const maxFactor = 650 // adjust this value as necessary
+  const maxFactor = 700 // adjust this value as necessary
   const scaleFactor = Math.min(1, maxFactor / scaleBy);
   const scaledWidth = Math.round(width * scaleFactor);
   const scaledHeight = Math.round(height * scaleFactor);

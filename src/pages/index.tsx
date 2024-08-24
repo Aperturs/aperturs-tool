@@ -51,13 +51,15 @@ export default function Home() {
   const [width, setWidth] = useState(1080);
   const [textColor, setTextColor] = useState("text-black");
   const [favicon, setFavicon] = useState("/favicon_light.ico");
+  const tweetNameRef = useRef<string |null>(null);
 
   useEffect(() => {
     const fetchTweet = async () => {
       if (!tweetId) return; // Skip fetching if tweetId is empty
       const res = await fetch(`/api/tweet?id=${tweetId}`);
       if (res.ok) {
-        const data = await res.json();
+        const data = await res.json() as TweetData;
+        tweetNameRef.current = `${data.user.name} tweet ${tweetId}.png`;
         setTweet(data);
         console.log(data);
       }
@@ -87,7 +89,7 @@ export default function Home() {
     toPng(ref.current.firstChild, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = `tweet.png`;
+        link.download = tweetNameRef.current || "tweet.png";
         link.href = dataUrl;
         link.click();
       })

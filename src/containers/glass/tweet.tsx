@@ -19,7 +19,7 @@ const Tweet = () => {
     >
       <Profile />
       <Content />
-      <div className="absolute bottom-3 w-full flex justify-between">
+      <div className="w-full flex mt-5 justify-between">
         {response && <Response />}
         <Time />
       </div>
